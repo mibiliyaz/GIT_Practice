@@ -1,0 +1,35 @@
+
+___________________________________________________________________________________________
+
+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
+
+___________________________________________________________________________________________
+
+<!-- Sender -->
+<div class="fS">
+    Customer ID: <input type="text" [(ngModel)]="cId" (ngModelChange)="dispD()"> <br><br>
+    <div *ngIf="cName; else ndet">
+        Customer Name: {{cName}}<br>
+        Account Balance: {{cBal}}
+    </div>
+    <ng-template #ndet>
+        Enter valid customer id to display customer details.
+    </ng-template>
+</div><br><br>
+
+
+
+-------------------------------------------------------------------------------------
+
+  login = new FormGroup({
+    emailid: new FormControl('',[Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
+    password: new FormControl('',[Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")])
+  });
+  get emailid() {
+    return this.login.get('emailid');
+  }
+  get password() {
+    return this.login.get('password');
+  }
+  uem=String(this.login.get('emailid'));
+  upw=String(this.login.get('password'));
